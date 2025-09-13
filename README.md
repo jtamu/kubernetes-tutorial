@@ -84,5 +84,10 @@ kubectl delete rs httpserver -n default
 kubectl get deploy -n default
 ```
 
+## get service
+```
+kubectl get service hello-server-service -n default
+```
+
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/quick-reference/
