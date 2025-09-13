@@ -8,6 +8,12 @@ kind create cluster --image=kindest/node:v1.29.0
 ```
 
 # kubectl
+
+## describe api resources
+```
+kubectl api-resources
+```
+
 ## get nodes
 ```
 kubectl get nodes
@@ -61,6 +67,21 @@ kubectl edit pod myapp -n default
 ## delete pod
 ```
 kubectl delete pod myapp -n default
+```
+
+## get replicaset
+```
+kubectl get rs -n default
+```
+
+## delete replicaset
+```
+kubectl delete rs httpserver -n default
+```
+
+## get deployment
+```
+kubectl get deploy -n default
 ```
 
 ## cheat sheet
