@@ -45,14 +45,14 @@ kubectl logs myapp -n default
 kubectl logs myapp -c hello-server -n default
 ```
 
-※pod指定する場合は`--selector {k}={v}`でlabelで絞り込める
+※ pod指定する場合は`--selector {k}={v}`でlabelで絞り込める
 
 ## debug
 ```
 kubectl debug -it myapp --image=curlimages/curl:8.4.0 --target=hello-server -n default -- sh
 ```
 
-※対象のコンテナと同じホスト・ボリュームを参照できる
+※ 対象のコンテナと同じホスト・ボリュームを参照できる
 
 ## exec
 ```
@@ -94,9 +94,21 @@ kubectl delete rs httpserver -n default
 kubectl get deploy -n default
 ```
 
+## restart deployment
+```
+kubectl rollout restart deployment/hello-server -n default
+```
+
+※ ConfigMap経由で設定した環境変数は、アプリケーションを再起動しないと反映されない
+
 ## get service
 ```
-kubectl get service hello-server-service -n default
+kubectl get svc hello-server-service -n default
+```
+
+## get configmap
+```
+kubectl get cm -n default
 ```
 
 ## cheat sheet
