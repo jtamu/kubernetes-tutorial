@@ -121,5 +121,15 @@ kubectl get job -n default
 kubectl describe job date-checker -n default
 ```
 
+## get cronjob
+```
+kubectl get cj -n default
+```
+
+## describe cronjob
+```
+kubectl describe cj date -n default
+```
+
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/quick-reference/
