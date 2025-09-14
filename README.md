@@ -111,5 +111,15 @@ kubectl get svc hello-server-service -n default
 kubectl get cm -n default
 ```
 
+## get job
+```
+kubectl get job -n default
+```
+
+## describe job
+```
+kubectl describe job date-checker -n default
+```
+
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/quick-reference/
