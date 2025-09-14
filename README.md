@@ -7,6 +7,11 @@ Thanks of https://github.com/aoi1/bbf-kubernetes
 kind create cluster --image=kindest/node:v1.29.0
 ```
 
+## delete cluster
+```
+kind delete cluster
+```
+
 # kubectl
 
 ## describe api resources
@@ -62,6 +67,11 @@ kubectl port-forward myapp 5555:8080 -n default
 ## edit manifest
 ```
 kubectl edit pod myapp -n default
+```
+
+## show manifest diff
+```
+kubectl diff -f chapter-06/service-nodeport.yaml
 ```
 
 ## delete pod
