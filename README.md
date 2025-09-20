@@ -7,6 +7,11 @@ Thanks of https://github.com/aoi1/bbf-kubernetes
 kind create cluster --image=kindest/node:v1.29.0
 ```
 
+## create cluster (with config)
+```
+kind create cluster -n kind-multinode --config kind/multinode-config.yaml --image=kindest/node:v1.29.0
+```
+
 ## delete cluster
 ```
 kind delete cluster
@@ -100,6 +105,11 @@ kubectl rollout restart deployment/hello-server -n default
 ```
 
 ※ ConfigMap経由で設定した環境変数は、アプリケーションを再起動しないと反映されない
+
+## edit replicas
+```
+kubectl scale deploy hello-server --replicas=2 -n default
+```
 
 ## get service
 ```
