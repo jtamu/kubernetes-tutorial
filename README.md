@@ -141,5 +141,18 @@ kubectl get cj -n default
 kubectl describe cj date -n default
 ```
 
+## install metrics server
+```
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.8.0/components.yaml
+
+kubectl patch -n kube-system deployment metrics-server --type=json \
+    --patch '[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+```
+
+## watch hpa (Horizontal Pod Autoscaler)
+```
+kubectl get hpa -n default --watch
+```
+
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/quick-reference/
