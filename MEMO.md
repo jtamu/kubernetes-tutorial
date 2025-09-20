@@ -45,3 +45,10 @@
 
 - Pod Priorityが設定されていると、全てのPodを配置できない(preemption)場合より優先度の低いPodを押しのけてスケジュールされる
     - Podに直接設定するのではなく、PriorityClassを通じて設定する
+
+# Pod退避
+
+- 本番運用では、NodeのメンテナンスのためにPodをNodeから退避させたい場合がある
+- その場合に備えて、PDB (PodDestruptionBudget) という設定がある
+    - minAvailable: 最低いくつのPodが利用可能である必要があるか
+    - maxUnavailable: 最大いくつのPodが利用不可であることを許容するか
