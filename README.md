@@ -19,6 +19,11 @@ kind delete cluster
 
 # kubectl
 
+## create namespace
+```
+kubectl create namespace monitoring
+```
+
 ## describe api resources
 ```
 kubectl api-resources
@@ -156,3 +161,24 @@ kubectl get hpa -n default --watch
 
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/quick-reference/
+
+# helm
+
+## install helm
+```
+# install
+./get_helm.sh
+
+# add repo
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+## install resource with helm
+```
+helm install kube-prometheus-stack --namespace monitoring prometheus-community/kube-prometheus-stack
+```
+
+## show default settings
+```
+helm show values prometheus-community/kube-prometheus-stack
+```
