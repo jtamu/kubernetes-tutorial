@@ -183,6 +183,11 @@ helm install kube-prometheus-stack --namespace monitoring prometheus-community/k
 helm show values prometheus-community/kube-prometheus-stack
 ```
 
+## upgrade helm
+```
+helm upgrade kube-prometheus-stack -f kube-prometheus-stack/values.yaml prometheus-community/kube-prometheus-stack --namespace monitoring
+```
+
 # kustomize
 
 ## apply kustomized manifest
