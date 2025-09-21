@@ -182,3 +182,10 @@ helm install kube-prometheus-stack --namespace monitoring prometheus-community/k
 ```
 helm show values prometheus-community/kube-prometheus-stack
 ```
+
+# kustomize
+
+## apply kustomized manifest
+```
+kubectl kustomize overlays/staging/ | kubectl apply -f - -n default
+```
